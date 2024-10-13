@@ -8,6 +8,9 @@ dependencies:
   '@solidjs/router':
     specifier: ^0.14.7
     version: 0.14.7(solid-js@1.9.1)
+  solid-icons:
+    specifier: ^1.1.0
+    version: 1.1.0(solid-js@1.9.1)
   tailwindcss:
     specifier: ^3.4.13
     version: 3.4.13
@@ -1676,6 +1679,14 @@ packages:
   /signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
+    dev: false
+
+  /solid-icons@1.1.0(solid-js@1.9.1):
+    resolution: {integrity: sha512-IesTfr/F1ElVwH2E1110s2RPXH4pujKfSs+koT8rwuTAdleO5s26lNSpqJV7D1+QHooJj18mcOiz2PIKs0ic+A==}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.9.1
     dev: false
 
   /solid-js@1.9.1:

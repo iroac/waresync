@@ -3,10 +3,11 @@ import { Router, Route } from "@solidjs/router";
 import "./index.css"
 
 import App from "../modules/App";
+import Layout from "../modules/layout";
 const root = document.getElementById("root") as HTMLElement
 
 render(() => (
-            <Router>
+            <Router root={Layout} >
                 <Route path="/" component={App} />
             </Router>
         ),
