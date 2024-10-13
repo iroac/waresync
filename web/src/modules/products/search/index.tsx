@@ -1,14 +1,13 @@
-import { createSignal } from 'solid-js'
+import InputField from "../../../components/atoms/InputField"
+
 
 function ProductsSearch() {
-  const [count, setCount] = createSignal(0)
 
   return (
-    <>
-        <button class=' bg-green-400 ' type="button" onClick={() => setCount((count) => count + 1)}>
-          Demon is {count()}
-        </button>
-    </>
+    <div class="flex flex-row justify-start items-center w-full h-20 shadow-md bg-white-500 px-4 " >
+      <h1 class="text-black font-medium text-[30px]" >All Product List</h1>
+      <InputField labelButton="Search" class="w-[400px] ml-6 " placeholder="Search Products" search />
+    </div>
   )
 }
 

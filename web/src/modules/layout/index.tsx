@@ -5,7 +5,7 @@ function Layout(props: ParentProps) {
     return (
         <div class="flex flex-row w-full h-screen">
         <Sidebar />
-        <main class="flex-1 p-8 self-start">
+        <main class="flex-1 self-start">
           {props.children}
         </main>
         </div>

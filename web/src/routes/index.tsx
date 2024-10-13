@@ -1,10 +1,11 @@
+import { Route, Router } from "@solidjs/router";
+import 'flowbite';
 import { render } from "solid-js/web";
-import { Router, Route } from "@solidjs/router";
-import "./index.css"
-import Layout from "../modules/layout";
 import Dashboard from "../modules/dashboard";
-import ProductsSearch from "../modules/products/search";
+import Layout from "../modules/layout";
 import ProductsCatalog from "../modules/products/catalog";
+import ProductsSearch from "../modules/products/search";
+import "./index.css"
 
 const root = document.getElementById("root") as HTMLElement
 
