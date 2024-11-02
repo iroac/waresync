@@ -1,11 +1,17 @@
-import { createAsync } from "@solidjs/router";
 import { For, Suspense } from "solid-js";
-import { fetchProduct } from "../../../api/products";
 import InputField from "../../../components/atoms/InputField";
 import { ProductCard } from "./components/productCard";
+import { createQuery } from "@tanstack/solid-query";
+import { fetchProduct } from "../../../api/products/getProducts";
 
 function ProductsSearch() {
-  const products = createAsync(() => fetchProduct(12));
+
+  const products = createQuery(() => ({
+    queryKey: ["products"],
+    queryFn: fetchProduct,
+    staleTime:  1000 * 60 * 10, // 10 minutes 
+    throwOnError: true
+  }))
 
   return (
     <div class="flex flex-col w-full h-screen">
@@ -21,7 +27,7 @@ function ProductsSearch() {
 
       <Suspense fallback={<p>Loading...</p>} >
         <div class="flex flex-wrap justify-center items-center gap-4 overflow-y-auto flex-grow p-4">
-            <For each={products()?.data}>
+            <For each={products.data?.data}>
               {(product) => <ProductCard product={product} />}
             </For>
           </div>

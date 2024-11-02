@@ -1,5 +1,5 @@
 import { AiFillStar, AiFillShopping } from "solid-icons/ai";
-import { Products } from "../../../../api/products";
+import { Products } from "../../../../api/products/getProducts";
 
 export const ProductCard = (props: { product: Products }) => {
     return (

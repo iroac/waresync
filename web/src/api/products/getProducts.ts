@@ -13,7 +13,7 @@ export type Products = {
     }
   }
 
-export const fetchProduct = async (limit: number) => {
-    const response = await axios.get<Products[]>(`https://fakestoreapi.com/products?limit=${limit}`);
-    return response
-  }
+export const fetchProduct = async () => {
+      const response = await axios.get<Products[]>(`https://fakestoreapi.com/products?limit=${12}`);
+      return response
+    }
