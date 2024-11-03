@@ -1,6 +1,13 @@
 import { createStore } from "solid-js/store"
+import { Products } from "../../../api/products/getProducts"
 
-export const [storeProducts, setStoreProducts] = createStore({
+interface StoreProducts {
+  limit: number
+  products: Products[]
+}
+ 
+export const [storeProducts, setStoreProducts] = createStore<StoreProducts>({
   limit: 10,
+  products: []
 })
 

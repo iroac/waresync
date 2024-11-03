@@ -1,8 +1,8 @@
 import { For, Suspense } from "solid-js";
 import { ProductCard } from "./components/productCard";
+import { SearchHearder } from "./components/searchHeader";
 import { createQuery } from "@tanstack/solid-query";
 import { getProducts } from "../../../api/products/getProducts";
-import { SearchHearder } from "./components/searchHeader";
 
 
 function ProductsSearch() {
