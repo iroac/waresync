@@ -1,14 +1,28 @@
-import { createSignal } from 'solid-js'
+import { useQueryClient } from '@tanstack/solid-query'
+import { For } from 'solid-js'
+import { getProducts } from '../../../api/products/getProducts'
+import { ProductCard } from '../search/components/productCard'
+import { setStoreProducts } from '../storage'
 
 function ProductsCatalog() {
-  const [count, setCount] = createSignal(0)
+  const query = useQueryClient()
+  const products = query.getQueryData(getProducts().queryKey)
+
+  const resetLimit = () => {
+    //@ts-ignore
+    setStoreProducts("limit", (item) => item + 1)
+    query.refetchQueries({ queryKey: getProducts().queryKey})
+  }
+  
 
   return (
-    <>
-        <button class=' bg-green-400 ' type="button" onClick={() => setCount((count) => count + 1)}>
-          Catalog is {count()}
-        </button>
-    </>
+    <div class='flex flex-row w-full h-full flex-wrap gap-2 overflow-y-auto p-2 mt-2 ' >
+      <For each={products}>
+              {(product) => <ProductCard product={product} />}
+      </For>
+      
+      <button type='button' onClick={resetLimit}>Aumentar Limite</button>
+    </div>
   )
 }
 
